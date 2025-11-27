@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Filter</title>
+    <title>Unit Creation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,51 +13,71 @@
 
         <!-- Sidebar -->
         <aside class="sidebar">
-            <h2 class="logo">Toolkit</h2>
-
+            <h2 class="logo">3Dtracking Toolkit</h2>
             <ul class="menu">
-                <li class="active">Text Filter</li>
-                <li>Commands</li>
-                <li>Calculators</li>
+                <li class="active" href="#home">Home</li>
+                <li class="active" href="#unit-creation">Unit Creation</li>
+                <li class="active"href="#update-attributes">Update Attributes</li>
             </ul>
         </aside>
 
         <!-- Main content -->
         <main class="content">
 
-            <h1>Text Filter</h1>
+            <section id="home">
+                <h1>Welcome to the Unit Creation Tool</h1>
+                <p class="description">
+                    This tool allows you to create and manage units within the 3Dtracking platform. Use the menu on the left to navigate between different functionalities.
+                </p>
+            </section>
 
-            <p class="description">
-                This utility helps you filter a text file by mapping all the lines and including only those that match
-                the keyword. You can also use the checkbox below to return the content following the keyword in each line.
-            </p>
+            <section id="unit-creation">
+                
+                <h1>Unit Creation</h1>
 
-            <!-- Drag & Drop -->
-            <div class="dropzone" id="dropzone">
-                Drag 'n' drop some files here, or click to select files
+                <p class="description">
+                    This tool implements a tracker and unit creation within the 3Dtracking platform. Please upload an excel file with the required unit information to proceed with the creation process.
+                </p>
+
+                <!-- Drag & Drop -->
+                <div class="dropzone" id="dropzone">
+                    Drag the excel file here.
                 <input type="file" id="fileInput" hidden>
-            </div>
 
-            <!-- Keyword input -->
-            <div class="form-group">
-                <label>Keyword</label>
-                <input type="text" id="keywordInput" placeholder="Enter keyword">
-                <small id="errorMsg">Entry required.</small>
-            </div>
+                </div>
+                <!-- Button -->
+                <button class="btn">IMPORT UNITS</button>
 
-            <!-- Checkbox -->
-            <div class="checkbox-group">
-                <input type="checkbox" id="afterKeyword">
-                <label for="afterKeyword">Only content after the keyword</label>
-            </div>
+                <!-- Footer -->
+                <footer>
+                    Copyright @3Dtracking 2025.
+                </footer>
 
-            <!-- Button -->
-            <button class="btn">FILTER & SAVE</button>
+            </section>
 
-            <!-- Footer -->
-            <footer>
-                Copyright © MUI 2025.
-            </footer>
+            <section id="update-attributes" class="hidden">
+                <h1>Update Attributes</h1>
+                <p class="description">
+                    This section allows you to update attributes of existing units. Select the attributes you wish to modify and apply the changes. Please upload an excel file with the required unit information to proceed with the creation process.
+
+                </p>
+
+                <!-- Drag & Drop -->
+                <div class="dropzone" id="dropzone">
+                    Drag the excel file here.
+                <input type="file" id="fileInput" hidden>
+
+                </div>
+                <!-- Button -->
+                <button class="btn">UPDATE ATTRIBUTES</button>
+
+                <!-- Footer -->
+                <footer>
+                    Copyright @3Dtracking 2025.
+                </footer>
+
+            </section>
+            
 
         </main>
 

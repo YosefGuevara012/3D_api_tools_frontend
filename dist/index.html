@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Collapsible Sidebar (keep icons)</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<header>3Dtracking Toolkit</header>
+<aside class="sidebar">
+  <input
+    data-symbol="sidebar-switch"
+    type="checkbox"
+    aria-label="sidebar toggle"
+  />
+  <ul class="menu">
+    <li data-content="home">
+      <span data-symbol="home" aria-hidden="true">home</span>
+      <span class="text">Home</span>
+    </li>
+    <li data-content="unit-creation">
+      <span data-symbol="toc" aria-hidden="true">toc</span>
+      <span class="text">Unit Creation</span>
+    </li>
+    <li data-content="update-attributes">
+      <span data-symbol="toc" aria-hidden="true">toc</span>
+      <span class="text">Update Attributes</span>
+    </li>
+    <li>
+      <span data-symbol="settings" aria-hidden="true">settings</span>
+      <span class="text">Settings</span>
+    </li>
+  </ul>
+</aside>
+<main>
+    <section id="home">
+        <h1>Welcome to the Unit Manager Tool</h1>
+        <p class="description">
+            This tool allows you to create and manage multiple units within the 3Dtracking system. Use the menu on the left to navigate between different functionalities.
+        </p>
+    </section>
+
+    <section id="unit-creation" class = "hidden">
+        
+        <h1>Unit Creation</h1>
+
+        <p class="description">
+            This tool implements a tracker and unit creation within the 3Dtracking platform. Please upload an excel file with the required unit information to proceed with the creation process.
+        </p>
+
+        <!-- Drag & Drop -->
+        <div class="dropzone">
+            Drag the excel file here.
+        <input type="file" class="fileInput" hidden>
+
+        </div>
+        <!-- Button -->
+        <button class="btn">IMPORT UNITS</button>
+
+    </section>
+
+    <section id="update-attributes" class="hidden">
+        <h1>Update Attributes</h1>
+        <p class="description">
+            This section allows you to update attributes of existing units. Select the attributes you wish to modify and apply the changes. Please upload an excel file with the required unit information to proceed with the creation process.
+        </p>
+
+        <!-- Drag & Drop -->
+        <div class="dropzone">
+            Drag the excel file here.
+        <input type="file" class="fileInput" hidden>
+
+        </div>
+        <!-- Button -->
+        <button class="btn">UPDATE ATTRIBUTES</button>
+
+    </section>
+            
+
+            
+</main>
+<footer>Copyright @3Dtracking 2025.</footer>
+<script src="script.js"></script>
+    
+  </body>
+  
+</html>

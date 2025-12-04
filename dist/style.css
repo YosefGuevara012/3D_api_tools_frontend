@@ -1,0 +1,198 @@
+body {
+  --base-color: #844;
+  --sidebar-size: 12em;
+  --sidebar-size-collapsed: 3em;
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 100%;
+  display: grid;
+  place-content: center;
+  background-color: #aef;
+  grid-template-columns: [start] var(--sidebar-size) [middle] 1fr [end];
+  grid-template-rows:
+    [header]
+    auto
+    [content-start]
+    minmax(min-content, 1fr)
+    [content-end]
+    auto
+    [footer];
+  transition: grid-template-columns 0.3s ease-out;
+  > header {
+    --background-color: hsl(from var(--base-color) h calc(s * 0.4) calc(l * 1.3));
+    grid-row-start: header;
+    grid-row-end: content-start;
+    grid-column-start: start;
+    grid-column-end: end;
+    background-color: var(--background-color);
+    font-size: 125%;
+    height: 3em;
+    align-content: center;
+    text-align: center;
+  }
+  > .sidebar {
+    background-color: #844;
+    grid-row-start: content-start;
+    grid-row-end: content-end;
+    grid-column-start: start;
+    grid-column-end: middle;
+    position: relative;
+    ul {
+      --top: 2.5em; 
+      top: var(--top);
+      height: calc(100% - var(--top));
+      padding: 0;
+      margin: 0;
+      position: relative;
+      overflow-x: hidden;
+      li {
+        background: rgba(255, 255, 255, 0.25);
+        list-style: none;
+        padding: 0.5em;
+        margin: 0.5em 0 0.5em 0.5em;
+        display: flex;
+        align-items: center;
+        border-top-left-radius: 0.5em;
+        border-bottom-left-radius: 0.5em;
+        width: 100%;
+        .text {
+          opacity: 1;
+          transition: opacity 0.75s ease-out;
+          padding-left: 0.25em;
+          white-space: nowrap;
+        }
+        &:last-child{
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+  }
+  > main {
+    grid-row-start: content-start;
+    grid-row-end: content-end;
+    grid-column-start: middle;
+    grid-column-end: end;
+    background-color: #caa;
+    padding: 2em;
+  }
+  > footer {
+    --background-color: hsl(from var(--base-color) h calc(s * 0.4) calc(l * 1.5));
+    height: 2em;
+    font-size: 80%;
+    background-color: var(--background-color);
+    grid-row-start: content-end;
+    grid-row-end: footer;
+    grid-column-start: start;
+    grid-column-end: end;
+    align-content: center;
+    text-align: center;
+  }
+  &:has([data-symbol="sidebar-switch"]:checked) {
+    --sidebar-size: var(--sidebar-size-collapsed);
+    .sidebar {
+      ul {
+        .text {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+input[data-symbol="sidebar-switch"] {
+  --background-color: var(--base-color);
+  --color: white;
+  appearance: none;
+  color: var(--color);
+  background-color: var(--background-color);
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1.5em;
+  transition: all 0.5s;
+  position: absolute;
+  right: -0.75em;
+  top: 0.1em;
+
+  & + label {
+    visibility: hidden;
+  }
+
+  &:checked {
+    transition: all 0.2s;
+    &::before {
+      content: "arrow_menu_open";
+    }
+  }
+
+  &::before {
+    content: "arrow_menu_close";
+  }
+
+  &:hover {
+    --background-color: white;
+    --color: black;
+    &::before {
+      font-size: 125%;
+    }
+  }
+}
+
+[data-symbol] {
+  aspect-ratio: 1;
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.5em;
+  position: relative;
+  &::before {
+    font-size: 100%;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dropzone {
+  border: 2px dashed #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  background-color: rgb(218, 199, 199); /* Base color */
+  cursor: pointer;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* brightness when the mouse hovers the drag and drop optin */
+.dropzone:hover {
+  filter: brightness(1.05);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #844;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Marks the button as active in the side menu. */
+.menu li.active {
+  background: rgba(255, 255, 255, 0.50);
+}

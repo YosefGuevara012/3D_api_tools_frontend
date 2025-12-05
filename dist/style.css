@@ -1,5 +1,5 @@
 body {
-  --base-color: #844;
+  --base-color: #2A2E31;
   --sidebar-size: 12em;
   --sidebar-size-collapsed: 3em;
   min-height: 100vh;
@@ -12,7 +12,7 @@ body {
   font-size: 100%;
   display: grid;
   place-content: center;
-  background-color: #aef;
+  background-color: rgb(255, 255, 255);
   grid-template-columns: [start] var(--sidebar-size) [middle] 1fr [end];
   grid-template-rows:
     [header]
@@ -36,7 +36,7 @@ body {
     text-align: center;
   }
   > .sidebar {
-    background-color: #844;
+    background-color: #2A2E31;
     grid-row-start: content-start;
     grid-row-end: content-end;
     grid-column-start: start;
@@ -78,7 +78,7 @@ body {
     grid-row-end: content-end;
     grid-column-start: middle;
     grid-column-end: end;
-    background-color: #caa;
+    background-color: rgba(255, 255, 255, 0.25);
     padding: 2em;
   }
   > footer {
@@ -163,7 +163,7 @@ input[data-symbol="sidebar-switch"] {
   border-radius: 8px;
   padding: 30px;
   text-align: center;
-  background-color: rgb(218, 199, 199); /* Base color */
+  background-color: rgba(199, 177, 177, 0.253); /* Base color */
   cursor: pointer;
   margin: 20px 0;
   font-weight: bold;
@@ -178,7 +178,7 @@ input[data-symbol="sidebar-switch"] {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
-  background-color: #844;
+  background-color: #2A2E31;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
@@ -195,4 +195,12 @@ input[data-symbol="sidebar-switch"] {
 /* Marks the button as active in the side menu. */
 .menu li.active {
   background: rgba(255, 255, 255, 0.50);
+}
+
+.header{
+  color: white;
+}
+
+.text{
+  color: white;
 }

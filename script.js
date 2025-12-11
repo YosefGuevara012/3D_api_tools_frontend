@@ -43,44 +43,44 @@ menuItems.forEach(item => {
 //  DRAG & DROP PARA EXCEL
 // ==============================
 
-// Selecciona todas las zonas de drop
+//  Selects all dropzones
 const dropzones = document.querySelectorAll(".dropzone");
 
 dropzones.forEach(zone => {
-  // Busca el input file dentro de esa zona (por clase o por tipo)
+  // Search for the file input inside that zone (by class or by type)
   const fileInput = zone.querySelector(".fileInput") || zone.querySelector('input[type="file"]');
   const fileInfo = zone.querySelector(".fileInfo");
 
   // Auxiliar function to show the files in the front
 
   function showFileInfo(files){
-    if (!fileInfo || !file) return;
+    if (!fileInfo || !files) return;
     const sizeInKB = (files[0].size / 1024).toFixed(2);
     fileInfo.textContent = `Selected file: ${files[0].name} (${sizeInKB} KB)`;
   }
 
-  // Si el usuario hace clic en el recuadro, abrimos el selector de archivo
+  // If the user clicks the dropzone, open the file selector
   zone.addEventListener("click", () => {
     if (fileInput) {
       fileInput.click();
     }
   });
 
-  // Arrastrar encima del recuadro
+  // Drag & Drop over the dropzone
   zone.addEventListener("dragover", (e) => {
     e.preventDefault(); // Necesario para permitir drop
-    zone.style.background = "#8d1212ff";
+    zone.style.background = "#ce4747ff";
   });
 
   // Cuando el archivo sale de la zona sin soltarse
   zone.addEventListener("dragleave", () => {
-    zone.style.background = "#c73838ff";
+    zone.style.background = "#4840bbff";
   });
 
   // Cuando se suelta el archivo encima
   zone.addEventListener("drop", (e) => {
     e.preventDefault();
-    zone.style.background = "#b30707ff";
+    zone.style.background = "#1bb307ff";
 
     const files = e.dataTransfer.files;
     console.log("Dropped files:", files);
@@ -90,8 +90,7 @@ dropzones.forEach(zone => {
       fileInput.files = files;
     }
 
-    // Aquí podrías llamar a otra función para procesar el Excel
-    // por ejemplo: handleExcel(files[0]);
+    showFileInfo(files);
   });
 
   // Si el usuario NO arrastra, sino que selecciona desde el explorador
@@ -99,11 +98,32 @@ dropzones.forEach(zone => {
     fileInput.addEventListener("change", () => {
       const files = fileInput.files;
       console.log("Selected files:", files);
-      // handleExcel(files[0]);
+      showFileInfo(files);
     });
   }
 });
 
+
+// ==============================
+//  TEST BACKEND CONNECTION
+// ==============================
+
+const testBtn = document.getElementById("test-backend-btn");
+const testResult = document.getElementById("test-backend-result");
+
+if (testBtn) {
+  testBtn.addEventListener("click", async () => {
+    try {
+      const res = await fetch("http://127.0.0.1:8000/ping");
+      const data = await res.json();
+      console.log("Ping response:", data);
+      testResult.textContent = `Backend dice: ${data.message}`;
+    } catch (err) {
+      console.error(err);
+      testResult.textContent = "Error to connect to the backend😢";
+    }
+  });
+}
 
 // ==============================
 //  CONNECTION WITH FASTAPI
@@ -132,6 +152,8 @@ async function sendFileToBackend(url, file) {
   }
 }
 
+
+
 // ==============================
 //  UNIT CREATION BUTTON
 // ==============================
@@ -147,7 +169,7 @@ createUnitButton.addEventListener("click", async() => {
     return;
   }
 
-  await sendFileToBackend("http://127.0.0.1:8000", file);
+  await sendFileToBackend("http://127.0.0.1:8000/tracker_list", file);
 
 });
 

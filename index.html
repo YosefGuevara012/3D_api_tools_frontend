@@ -43,6 +43,20 @@
         <p class="description">
             This tool allows you to create and manage multiple units within the 3Dtracking system. Use the menu on the left to navigate between different functionalities.
         </p>
+        <button id="test-backend-btn">Test Backend</button>
+        <div id="test-backend-result"></div>
+          <div class="login-box">
+          <h2>Please use your 3Dtracking user login credentials to use the tools</h2>
+          
+            <label for="username">User</label>
+            <input type="text" id="username" placeholder="Enter your username">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+          <button class="btn">Login</button>
+      </div>
+
+
     </section>
 
     <section id="unit-creation" class = "hidden">
@@ -57,7 +71,7 @@
         <div class="dropzone">
             Drag the excel file here.
             <input type="file" class="fileInput" hidden>
-            <div class = "fileInfo">DOING SOMETHING?????</div>
+            <div class = "fileInfo"></div>
         </div>
         <!-- Button -->
         <button class="btn">Import Units</button>

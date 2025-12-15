@@ -12,7 +12,7 @@ body {
   font-size: 100%;
   display: grid;
   place-content: center;
-  background-color: rgb(255, 255, 255);
+  background-color: #f5f5f5;
   grid-template-columns: [start] var(--sidebar-size) [middle] 1fr [end];
   grid-template-rows:
     [header]
@@ -159,14 +159,16 @@ input[data-symbol="sidebar-switch"] {
 }
 
 .dropzone {
-  border: 2px dashed #ffffff;
+  border: 1px dashed #2A2E31;
   border-radius: 8px;
   padding: 30px;
   text-align: center;
-  background-color: rgba(199, 177, 177, 0.253); /* Base color */
+  background-color: #f5f5f5; /* Base color rgba(199, 177, 177, 0.253); */
   cursor: pointer;
   margin: 20px 0;
   font-weight: bold;
+  color:rgba(0, 0, 0, 0.6);
+
 }
 
 /* brightness when the mouse hovers the drag and drop optin */
@@ -178,7 +180,7 @@ input[data-symbol="sidebar-switch"] {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
-  background-color: #2A2E31;
+  background-color: #007BFF;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
@@ -203,4 +205,19 @@ input[data-symbol="sidebar-switch"] {
 
 .text{
   color: white;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 16px 0 24px;
+}
+
+
+.dropzone_container{
+  border-radius: 5px;
+  padding: 20px;
+  background-color: white; /* Base color */
+  cursor: pointer;
+  margin: 20px 0;
 }

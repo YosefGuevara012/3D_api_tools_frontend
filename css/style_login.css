@@ -128,3 +128,9 @@ html {
     text-transform: uppercase;
     letter-spacing: 4px;
 }
+
+.divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 16px 0 24px;
+}

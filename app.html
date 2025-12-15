@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <title>3DTracking Toolkit</title>
-    <link rel="stylesheet" href="./style_app.css">
+    <link rel="stylesheet" href="./css/style_app.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
@@ -46,59 +46,72 @@
 </aside>
 <main>
     <section id="home">
-        <h1>Welcome to the Unit Manager Tool</h1>
+        <h1>Welcome to 3DTracking Toolkit</h1>
+        <div class="divider"></div>
         <p class="description">
-            This tool allows you to create and manage multiple units within the 3Dtracking system. Use the menu on the left to navigate between different functionalities.
+          This toolkit provides a set of utilities to manage and process data within the 3DTracking platform.
         </p>
-        <button id="test-backend-btn">Test Backend</button>
-        <div id="test-backend-result"></div>
-          <div class="login-box">
-          <h2>Please use your 3Dtracking user login credentials to use the tools</h2>
-          
-            <label for="username">User</label>
-            <input type="text" id="username" placeholder="Enter your username">
 
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter your password">
-            <button id = "login-3dtracking-btn" class="btn">Login</button>
-            <div id="login-3dtracking-result"></div>
-          </div>
+        <ul class="doc-list">
+          <li>
+            <strong>Unit Creation tool</strong> : Automatically creates units and associated trackers from imported data.
+          </li>
+          <li>
+            <strong>Update Attributes tool</strong> : Bulk updates vehicle attributes across multiple units.
+          </li>
+          <li>
+            <strong>From CSV to KML</strong> : Converts platform .csv files into .kml format.
+          </li>
+        </ul>
+
+        <p class="description">
+          Use the left menu to navigate between available functionalities.
+        </p>
+        <!-- <button id="test-backend-btn">Test Backend</button>
+        <div id="test-backend-result"></div> -->
     </section>
 
     <section id="unit-creation" class = "hidden">
         
         <h1>Unit Creation</h1>
+        <div class="divider"></div>
 
         <p class="description">
             This tool implements a tracker and unit creation within the 3Dtracking platform. Please upload an excel file with the required unit information to proceed with the creation process.
         </p>
-
-        <!-- Drag & Drop -->
-        <div class="dropzone">
-            Drag the excel file here.
-            <input type="file" class="fileInput" hidden>
-            <div class = "fileInfo"></div>
+        
+        <div>
+          <!-- Drag & Drop -->
+          <div class="dropzone">
+              Drag 'n' drop the file here, or click to select the file.
+              <input type="file" class="fileInput" hidden>
+              <div class = "fileInfo"></div>
+          </div>
+          <!-- Button -->
+          <button class="btn">Import Units</button>
         </div>
-        <!-- Button -->
-        <button class="btn">Import Units</button>
+
 
     </section>
 
     <section id="update-attributes" class="hidden">
         <h1>Update Attributes</h1>
+        <div class="divider"></div>
         <p class="description">
             This section allows you to update attributes of existing units. Select the attributes you wish to modify and apply the changes. Please upload an excel file with the required unit information to proceed with the creation process.
         </p>
+        
+        <div>
+          <!-- Drag & Drop -->
+          <div class="dropzone">
+              Drag 'n' drop the file here, or click to select the file.
+              <input type="file" class="fileInput" hidden>
+              <div class = "fileInfo"></div>
 
-        <!-- Drag & Drop -->
-        <div class="dropzone">
-            Drag the excel file here.
-            <input type="file" class="fileInput" hidden>
-            <div class = "fileInfo"></div>
-
+          </div>
+          <!-- Button -->
+          <button class="btn">Update Attributes</button>
         </div>
-        <!-- Button -->
-        <button class="btn">Update Attributes</button>
 
     </section>
             
@@ -106,7 +119,7 @@
             
     </main>
     <footer>Copyright @3Dtracking 2025.</footer>
-    <script src="script_app.js"></script>
+    <script src="js/script_app.js"></script>
         
   </body>
   

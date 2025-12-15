@@ -1,0 +1,130 @@
+html {
+  height: 100%;
+}
+
+.login-box {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+/* --- 1. Estilos para la estructura de la caja del botón --- */
+
+.login-box form .button-container {
+    /* Define la posición dentro del formulario */
+    position: relative;
+    display: inline-block; /* Permite centrar el elemento si es necesario */
+    margin-top: 10px; /* Espacio entre el campo de contraseña y el botón */
+}
+
+/* --- 2. Estilos para el elemento de ancla (<a>) que contiene el botón --- */
+
+.login-box .login-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4; /* Un color de acento brillante, común en este estilo */
+    font-size: 16px;
+    text-decoration: none; /* Quita el subrayado predeterminado del enlace */
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s; /* Transición suave para el efecto hover */
+    margin-top: 10px;
+    letter-spacing: 4px; /* Espacio entre letras para darle un toque dramático */
+    
+    /* Importante para que el <button> que está dentro sea visible */
+    border: none;
+    background: transparent;
+}
+
+/* --- 3. Efecto al pasar el mouse (Hover Effect) --- */
+
+.login-box .login-button:hover {
+    background: #03e9f4; /* El color de acento se convierte en el fondo */
+    color: #fff; /* El texto se vuelve blanco */
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4; /* Un efecto de brillo dramático */
+}
+
+
+/* --- 4. Estilos para el elemento <button> real dentro del <a> --- */
+
+/* Es crucial que el botón interno herede los estilos o sea invisible */
+.login-box .login-button button {
+    /* Hacemos que el botón interno sea transparente y sin bordes */
+    border: none;
+    background: transparent;
+    color: inherit; /* Hereda el color del texto del <a> padre */
+    font-size: 16px;
+    cursor: pointer; /* Mantenemos el cursor de puntero */
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}

@@ -3,15 +3,22 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Collapsible Sidebar (keep icons)</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>3DTracking Toolkit</title>
+    <link rel="stylesheet" href="./style_app.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
+    <script>
+      if (!localStorage.getItem("session_id")) {
+        window.location.href = "login.html";
+      }
+    </script>
+  
   </head>
     
   <body>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-
-<header class="header">3Dtracking Toolkit</header>
+  
+<header class="header">3DTracking Toolkit</header>
 <aside class="sidebar">
   <input
     data-symbol="sidebar-switch"
@@ -53,10 +60,9 @@
 
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter your password">
-          <button class="btn">Login</button>
-      </div>
-
-
+            <button id = "login-3dtracking-btn" class="btn">Login</button>
+            <div id="login-3dtracking-result"></div>
+          </div>
     </section>
 
     <section id="unit-creation" class = "hidden">
@@ -98,10 +104,10 @@
             
 
             
-</main>
-<footer>Copyright @3Dtracking 2025.</footer>
-<script src="script.js"></script>
-    
+    </main>
+    <footer>Copyright @3Dtracking 2025.</footer>
+    <script src="script_app.js"></script>
+        
   </body>
   
 </html>

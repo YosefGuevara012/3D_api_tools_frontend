@@ -221,3 +221,54 @@ input[data-symbol="sidebar-switch"] {
   cursor: pointer;
   margin: 20px 0;
 }
+
+/* Table styles*/
+
+.styled-table {
+    /* Remove the original table border and use border-spacing for space */
+    border-collapse: separate; 
+    border-spacing: 0;
+    width: 100%; /* Optional: to occupy the full available width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow to give it depth */
+}
+
+.styled-table th, .styled-table td {
+    /* Padding to separate the text from the borders */
+    padding: 12px 15px; 
+    text-align: left;
+    border: none; /* We remove the default cell borders */
+}
+
+/* Apply rounded corners only to the table corners */
+.styled-table thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+.styled-table thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+.styled-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+.styled-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* Header style */
+.styled-table thead tr {
+    background-color: #007BFF ; /* #009879 A background color for the header */
+    color: #ffffff; /* White text color */
+}
+
+/* Body row style (color can be alternated) */
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd; /* Subtle separator between rows */
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #ffffff; /* Even row with a different background color */
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879; /* Thicker border at the end */
+}

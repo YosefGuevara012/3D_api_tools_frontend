@@ -116,8 +116,8 @@ if (testBtn) {
     try {
       const res = await fetch("http://127.0.0.1:8000/ping");
       const data = await res.json();
-      console.log("Ping response:", data);
-      testResult.textContent = `Backend dice: ${data.message}`;
+      console.log("Ping replies:", data);
+      testResult.textContent = `Backend says: ${data.message}`;
     } catch (err) {
       console.error(err);
       testResult.textContent = "Error to connect to the backend😢";

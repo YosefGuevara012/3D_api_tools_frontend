@@ -38,9 +38,14 @@
       <span data-symbol="build" aria-hidden="true" style="color: white;">build</span>
       <span class="text">Update Attributes</span>
     </li>
+    <li data-content="from-csv-to-kml">
+      <span data-symbol="folder" aria-hidden="true" style="color: white;">folder</span>
+      <span class="text">From CSV to KML</span>
+    </li>
     <li>
       <span data-symbol="settings" aria-hidden="true" style="color: white;">settings</span>
       <span class="text">Settings</span>
+      <!--https://designsystem.digital.gov/components/icon/*/-->
     </li>
   </ul>
 </aside>
@@ -52,17 +57,28 @@
           This toolkit provides a set of utilities to manage and process data within the 3DTracking platform.
         </p>
 
-        <ul class="doc-list">
-          <li>
-            <strong>Unit Creation tool</strong> : Automatically creates units and associated trackers from imported data.
-          </li>
-          <li>
-            <strong>Update Attributes tool</strong> : Bulk updates vehicle attributes across multiple units.
-          </li>
-          <li>
-            <strong>From CSV to KML</strong> : Converts platform .csv files into .kml format.
-          </li>
-        </ul>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Unit Creation tool</strong></td>
+              <td>Automatically creates units and associated trackers from imported data.</td>
+            </tr>
+            <tr>
+              <td><strong>Update Attributes tool</strong></td>
+              <td>Bulk updates vehicle attributes across multiple units.</td>
+            </tr>
+            <tr>
+              <td><strong>From CSV to KML</strong></td>
+              <td>Converts platform .csv files into .kml format.</td>
+            </tr>
+          </tbody>
+        </table>
 
         <p class="description">
           Use the left menu to navigate between available functionalities.
@@ -98,7 +114,7 @@
         <h1>Update Attributes</h1>
         <div class="divider"></div>
         <p class="description">
-            This section allows you to update attributes of existing units. Select the attributes you wish to modify and apply the changes. Please upload an excel file with the required unit information to proceed with the creation process.
+            This tool allows you to update attributes of existing units. Select the attributes you wish to modify and apply the changes. Please upload an excel file with the required unit information to proceed with the creation process.
         </p>
         
         <div>
@@ -114,10 +130,31 @@
         </div>
 
     </section>
-            
+   
+    <section id="from-csv-to-kml" class = "hidden">
+        
+        <h1>From .csv to .kml converter</h1>
+        <div class="divider"></div>
+
+        <p class="description">
+            This tool allows you to convert the platform's location list report from <strong>csvexport</strong> (exported as .csv) into the standard (Keyhole Markup Language) <strong>.kml</strong> format. Please upload the .csv file to proceed with the conversion.
+        
+        <div>
+          <!-- Drag & Drop -->
+          <div class="dropzone">
+              Drag 'n' drop the file here, or click to select the file.
+              <input type="file" class="fileInput" hidden>
+              <div class = "fileInfo"></div>
+          </div>
+          <!-- Button -->
+          <button class="btn">Covert File</button>
+        </div>
+
+
+    </section>
 
             
-    </main>
+</main>
     <footer>Copyright @3Dtracking 2025.</footer>
     <script src="js/script_app.js"></script>
         
